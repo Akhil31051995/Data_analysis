@@ -1,0 +1,11 @@
+# Types of css
+# css selectors
+*{} -- universal selector --styles apply to all element
+
+# multiple element selection
+p,h1,h3{
+	color:red;
+
+}
+
+# selection using ids and class names

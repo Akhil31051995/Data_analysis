@@ -1,0 +1,342 @@
+Basic tags
+
+<head></head>
+<body></body>
+<h1></h1> -- heading 
+<p></p> -- paragraph
+<b></b> -- bold
+<i></i> -- italics
+<mark></mark> -- highlight the area
+<sup></sup> -- superscript
+<sub></sub> -- subscript
+<del></del> -- delete
+<strong></strong> -- to give importance to a text
+<em></em> -- emphasise
+<ins></ins> -- underline
+
+<p><blockquote cite ="site name"></blockquote>
+
+<cite></cite> -- citation
+<address></address> -- create address format
+
+------------------------------------------------------------
+HTML colors --rgb,rgba,hex,hsl,hsla formats
+------------------------------------------------------------
+CSS - styling
+
+*inline css -- on the tag itself
+*internal css -- using <style></style> tag in head portion
+*external css --using external css file and linking it to the html 
+
+<link rel ="stylesheet" href = "filename.css"> --in the head tag
+----------------------------------------------------------------
+HTML tables
+<table>
+<caption>TABLE HEADING</caption>
+<tr>
+        <th>SN</th>         ----table heading
+	<th>item name</th>
+</tr>
+<tr>
+        <td>01</td>         ----table data
+	<td>cake</td>
+
+
+</tr>
+
+</table>
+
+
+styling 
+table{
+	border : 1px solid red;
+	border-collapse : collapse;
+
+}
+
+th,td{
+	text-align:center;
+	padding: 10px;
+}
+
+
+# giving table heading --- caption tag
+<th colspan='2'> -- for spanning the selected column range
+<th rowspan='3'> -- spannig rows
+
+----------------------------------------------------------
+HTML LINKS
+<a> tag
+<a href = 'https://www.google.com'>google</a>
+
+<a href = 'https://www.google.com' target = "_blank">google</a>--- opening link in a new tab
+
+<a href = 'https://www.google.com' title = "go to google">google</a>
+----a short description of the link
+
+# giving a local link --- to another html file
+
+<a href = 'contact.html'> contact us </a>
+
+# removing the underline in alink 
+# using css
+
+a:link{
+	text-decoration:none;}
+
+# color changing on hovering
+a:hover{
+	color:red;
+}
+
+-----------------------------------------------------------------
+HTML IMAGES
+#this brings both images side by side
+
+<img src = "cat.jpg" width = "200" height = "200">
+<img src = "dog.jpg" width = "200" height = "200">
+
+
+# images one by one down
+<img src = "cat.jpg" width = "200" height = "200">
+<br>
+<img src = "dog.jpg" width = "200" height = "200">
+
+
+# alternate text
+<img src = "cat.jpg" width = "200" height = "200" alt = 'cat photo'>
+
+# images from other website
+<img src = "external link other website" >
+
+# giving the entire photo as the background of webpage using css
+
+body{
+	background-image : url('/photos/cat.jpg')
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+
+-------------------------------------------------------------------
+IMAGES LINK
+
+<a href = "https://www.google.com/"> --- the link we have to go
+	<img src ="/photos/google.png"> -- the image we provide
+
+</a>
+------------------------------------------------------------------
+HTML IMAGES  -- IMAGE MAPS
+
+# to create one or more clickable ares in the image
+
+<img src = "/photos/social.png" alt = "social sites" usemap="#social">
+
+<map name = 'social'>
+  <area shape ='rect' coords="0,0,100,100" href = "first link">
+  <area shape ='rect' coords="0,100,200,100" href = "second link">
+  <area shape ='rect' coords="0,100,100,200" href = "third link">
+  <area shape ='rect' coords="100,100,200,200" href = "fourth link">
+
+</map>
+
+------------------------------------------------------------------
+DIVISION ELEMENT
+<div></div> -- creates block level element
+
+<div style ="background-color:red; float:left; width :33%";>
+
+--------------------------------------------------------------
+CLASSES
+#same class name can be given to one or more html elements
+
+styling classes
+
+# single class name
+<h2 class = 'vegetables"> Tomato </h2>
+style using .vegetables{}
+
+# multiple class name
+ <h2 class = 'vegetables organic"> Tomato </h2>
+
+so using .oganic{} also we can style the element
+
+-----------------------------------------------------------------
+IDS
+# ids cannot be repeated for elements
+# unique usage 
+
+<h2 id= 'vegetables"> Tomato </h2>
+styling using #vegetables{}
+
+--------------------------------------------------------------
+HTML LISTS
+
+unordered and orderd lists
+
+<ul>
+    <li>tomato</li>
+    <li>carrot</li>
+    <li>onion</li>
+</ul>
+
+<ol>
+    <li>banana</li>
+    <li>apple</li>
+    <li>orange</li>
+
+</ol>
+
+
+# changing the style of bullets
+<ul style="list-style-type:circle;">
+<ol type="A">
+<ol start='10'> --- starting value
+
+##nested list
+-----------
+###navigation menu from unordered list
+
+ul{
+ list-style-type : none;
+ overflow:hidden;
+background-color: brown;
+color:white;
+font-size : 20px;
+}
+
+li{
+   float:left;
+   padding:15 px;
+}
+
+li:hover{
+	background-color:blue;   ----color change on hovering
+}
+
+
+-------------------------------------------------------------------
+IFRAME
+
+#To display other webpage in our web page
+<iframe src="contact.html" width ='500' height='500'> 
+</iframe>
+
+# can bring other website inside using links
+<iframe src="https://www.wikipedia.org" width ='500' height='500'> 
+</iframe>
+
+-----------------------------------------------------------------
+
+HTML FORMS
+
+<form>
+	<label for='username'> username </label>
+	<input type='text' name = 'username' id ='username'> 
+	<br>
+	
+	<label> password </label>
+	<input type='password' name = 'password' id ='password'>
+	<br>
+	<input type='submit' value='Submit>
+</form>
+
+# radio button
+<div>
+   <input type = 'radio' name ='gender' id='male'>
+   <label for='male'>Male</label>
+   <input type = 'radio' name ='gender' id='female'>
+   <label for='female'>female</label>
+   <input type = 'radio' name ='gender' id='other'>
+   <label for='other'>Other</label>
+
+
+</div>
+
+# checkbox
+
+<div>
+     <input type='checkbox' name='game' id='football'>
+     <label for='football'>Football</label>
+     <input type='checkbox' name='game' id='cricket'>
+     <label for='cricket'>Cricket</label>
+     <input type='checkbox' name='game' id='tennis'>
+     <label for='tennis'>Tennis</label>
+
+</div>
+------------------------
+# dropdown/select box
+
+<div>
+<h3>State</h3>
+<label for='state'>State</label>
+<select name='state' id='state'>
+   <option value ='kerala'>Kerala</option>
+   <option value ='tamilnadu'>Tamil nadu</option>
+   <option value ='karnataka'>Karnataka</option>
+
+</div>
+
+-------------------
+# text area ---for address 
+
+<div>
+<h3>Address</h3>
+<label for= 'address'>Address</label>
+<textarea name='address' id='address' cols='30' rows='5'></textarea>
+</div>
+
+----------------
+# File upload input field
+
+<div>
+<h3>Upload Photo</h3>
+<label for='photo'>Upload:</label>
+<input type='file' name='photo' id='photo'>
+
+</div>
+-------------
+# button
+<input type='button' value='Register'>
+
+-----------------------------------------------------------------
+BUTTON BY BUTTON ELEMENT
+<button>Sign Up</button>
+
+# can give image as a button
+<button type='button' class='btn'>
+  <img src ='/photos/sign-up.png' alt='signup' width='100'>
+</button>
+------------------------------------------------------------------
+
+ADDING VIDEOS TO WEBPAGE
+
+<video width ='320' height='200' controls autoplay>
+<source src ='path to file' type = 'video/mp4'>
+
+</video>
+
+
+## adding youtube video to webpage
+right click on the video and copy embedded code
+paste it in the web page
+
+
+## audios
+<audio controls>
+<source src='file path'>
+
+</audio>
+
+
+### using javascript in webpage
+javascript used to create dynamic webpage
+
+<body>
+<script>
+alert('hello world');
+
+</script>
+
+</body>

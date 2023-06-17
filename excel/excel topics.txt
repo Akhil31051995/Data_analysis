@@ -1,0 +1,58 @@
+Creating pivot table
+adjusting the currency and decimals
+pivot table filters
+individual column name change and settings
+
+pivot table analyse -- to add a new field/column using formula
+
+---------------------------------------------------------
+Excel Formulas 
+
+Max - Min of a range
+IF --(condition,value,else value)
+IFS -- multiple logical tests
+    -- (condition1,true value,condition2,true value,condition3,true value,......)
+
+LEN -- length of characters
+LEFT-- (text,number of characters)
+RIGHT --  eg: useful when extracting year,date etc
+
+# left , right can be used on both text and numbers
+
+TEXT -- converts specific values to text format
+
+=TEXT(value,format of the text)
+eg:TEXT(H2:H10,"dd/mm/yyyy")
+
+usecase -- if the values in datetime format we cannot apply RIGHT directly to extract year. so convert to text and then use RIGHT.
+
+TRIM -- removes unwanted space in the text
+CONCATENATE-- joins two or more text strings
+eg: CONCATENATE(text1," ",text2)
+
+SUBSTITUTE -- replace exixting text with a new text in a string
+SUBSTITUTE(text,oldtext,newtext)
+eg: SUBSTITUTE(H2:H10,"-","/")
+if we do not include instance -- it applies to every values
+instances -- on what occurence the string should be changed.**
+
+SUM--
+SUMIF -- (range,criteria)
+eg : SUMIF(G2:G10,">5000)
+
+SUMIFS -- (sum_range,criteria_range,criteria,criteria2)
+eg: SUMIFS(G2:G10,E2:E10,"Female",D2:D10,">30")
+
+COUNT -- count of cells or ranges
+COUNTIF -- count with conditions --(range,criteria)
+eg: count salary range>45000
+    COUNTIF(G2:G10,">45000")
+
+COUNTIFS-- (A2:A10,">1005",E2:E10,"condition2")
+
+DAYS--(enddate,startdate)-- how many days are between dates
+
+NETWORKDAYS -- Takes out holidays and weekends
+NETWORKDAYS(start date,enddate,holidays)
+
+
