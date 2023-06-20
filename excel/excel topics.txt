@@ -55,4 +55,128 @@ DAYS--(enddate,startdate)-- how many days are between dates
 NETWORKDAYS -- Takes out holidays and weekends
 NETWORKDAYS(start date,enddate,holidays)
 
+---------------------------------------------------------------
+XLOOKUP -- (lookup_value,lookup array,return array--what value it should return)
+
+## return more than one output-- xlookup multiple rows
+
+## the outputs must be near to each other
+
+XLOOKUP exact match --(lookup_value,lookup array,return array,"if not found value") 
+
+wildcard
+eg : =XLOOKUP("*"&A4,H2:H10,O2:O10,"not found",2)
+
+"*"& -- indicates anything that comes before A4 is okay
+
+XLOOKUP search order
+XLOOKUP horizontal
+Xlookup horizontal -- finding values
+combine use of xlookup and sum 
+=SUM(XLOOKUP(I1,H1:S1,H2:S2):XLOOKUP(J1,H1:S1,H2:S2))
+
+
+------------- VLOOKUP
+=VLOOKUP(lookupvalue,table array,col index number--index pos of return column,FALSE)
+
+FALSE-- exact match
+TRUE-- approx match
+
+## since index pos of the column is used , any insertion in the data entirely changes the return value.
+## xlookup overcomes this problem
+
+
+------------------------------------------------------------------
+Data Analysis with excel -- Chandoo
+
+* cntrl + T -- convert data to a table
+=average(data[amount]) -- table name =data, finds avg of amount column
+* Adding filters to table --- cntrl + shift + L
+
+statistics
+mean
+median
+quartiles
+max
+min
+range
+
+counta(unique(data[products])
+
+---EDA---
+conditional formatting -- color scales
+sort the values in column to get the rough idea of data
+conditional formatting -- data bars
+
+clear rules -- to remove formatting we applied
+conditional formatting -- top/bottom rules -- above average
+conditional formatting -- highlight rules -- duplicate values
+
+
+# sales analysis --with formulas
+getting unique countries names --apply unique function 
+
+or
+copy the country names -- paste as values
+data -- remove duplicates
+
+        ###formulas###
+SUMIFS(sum range,criteria_range,criteria1)
+=SUMIFS(data[amount],data[geography],C6) -- where C6 cell points to a specific country 
+
+cntrl + 1 -- open format options of a cell
+
+# styling the table to a presantable format
+
+        ###sales analysis -- with pivots###
+
+insert pivot table -- drag drop values
+add data bars column
+
+--in pivot table fields
+--select a particular column -- add it as a slicer
+--slicer option -- manage the slices
+-- makes the chart more interactive
+
+         ## Top 5 products by $ per unit ##
+adding a table as part of the pivot 
+--add data model
+--incorprating power pivot 
+--right click on a column -- add new meausure
+
+# to see the top 5 items only
+--click arrow on the column heading
+--value filter -top 10
+
+
+         ## anomaly detection in data ##
+
+select amount and unit column -- do a x-y scatter plot
+select a column -- insert box plot 
+selct two columns -- insert multiple box plots by category
+
+## top sales person in each country
+-- value filter
+
+         ## combining data columns##
+--using lookup formulas for table
+=XLOOKUP([@Product],products[Product],products[Cost per unit])
+--here product is a table
+--Product is a column
+
+         ## Category Report ##
+--dynamic country level report
+
+
+
+
+
+--------------------------------------------
+
+
+
+
+
+
+
 
