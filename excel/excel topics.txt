@@ -167,11 +167,67 @@ selct two columns -- insert multiple box plots by category
          ## Category Report ##
 --dynamic country level report
 
+         ## Dynamic country-level sales report ##
 
+
+data --data validation --list --point to the range of values 
+(this is to add a dropdown for selection of values)
+
+conditional formatting -- icons
 
 
 
 --------------------------------------------
+        ##FILTER FORMULA##
+=FILTER(table_name,criteria)
+--filters the particular data
+--dynamic in nature -- any changes is instatnly reflected in the filtered data
+
+##filter particular column only
+=FILTER(staff[Name],staff[Gender]="Female")
+
+--COUNTA() -- text values
+=COUNTA(C5#--ash to select all the cell values)
+
+
+## multiple conditions in FILTER
+=FILTER(staff,(staff[Department]='website)*(staff[gender]='male'))
+* operator combines multiple conditions
+
+## to give table headers --
+=staff[#Headers]  where staff is the table name
+
+
+### OR CONDITION(+ operator)
+=FILTER(staff,(staff[Department])+(staff[salary]>90000))
+
+note : we can give the condition value directly or give reference to a cell
+
+
+### NOT CONDITION
+
+=FILTER(sales,sales[Geography]<>'USA')
+
+**can give this filter function inside sum function to get sum of a range
+eg: =SUM(FILTER(sales,sales[Geography]<>'USA'))
+
+## giving multiple complex conditions
+
+eg: sales from either usa or uk where sales amount above 2000
+
+=FILTER(sales[amount],((sales[geography]='usa')+(sales[geography]='uk'))*(sales[amount]>2000)
+
+
+note : make use of the dynamic nature of the above
+
+## Handling Errors
+
+=FILTER(sales[amount],((sales[geography]='usa')+(sales[geography]='uk'))*(sales[amount]>2000),""
+
+** Add an empty string to use in case an error appears
+
+
+
 
 
 
